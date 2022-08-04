@@ -1,0 +1,65 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<link rel="stylesheet" href="~/css/login.css" />
+<style>
+
+    #loginForm {
+        box-shadow: 0px 0px 10px gray;
+        background-color:aliceblue;
+    }
+
+    /*body {
+        background-image: url("https://source.unsplash.com/1600x900/?clinic");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }*/
+
+
+
+</style>
+
+
+<h1 class="text-center">@ViewData["Title"]</h1>
+<br />
+<div class="row">
+    <div class="col-lg-4 col-lg-offset-4 card" id="loginForm">
+        <section>
+            <form id="account" method="post">
+                <h2 class="text-center">Login to your account</h2>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div>
+                    <label asp-for="Input.Email" class="form-label"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+
+                </div><br />
+                <div>
+                    <label asp-for="Input.Password" class="form-label"></label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+
+                </div><br />
+                <div>
+                    <button id="login-submit" type="submit" class="w-100 custom-btn btn-11 btn-primary">Log in</button>
+                </div>
+                <div>
+                    <hr />
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                    </p>
+                    <hr />
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}
