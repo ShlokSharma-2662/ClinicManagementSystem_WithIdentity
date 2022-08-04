@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ASP.NETCoreIdentityCustom.Controllers
 {
+    //TEST
     public class UserController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
